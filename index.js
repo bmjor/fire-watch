@@ -5,8 +5,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-function switchMap(name)
-    L.setView([38, -101.2996], 4);
+function switchMap(continent){
+  if(continent == 1 ){
+        L.setView([38, -101.2996], 4);
+  }
+  else if (continent == 2){
+      L.setView([25, -534.342], 7)
+  }
+  else{
+    L.setView([175, 755.2345], 12)
+  }
+}
+
+
 
 
 function handleCSVData(results) {
