@@ -9,6 +9,7 @@
     font-style: normal;
   }
   
+
   
   h1 {
     color: #E99D6B;
@@ -32,6 +33,18 @@
   
   }
   
+  .about-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.about-icon img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
   
     #fun-facts {
       color: lightblue;
@@ -55,7 +68,6 @@
       max-width: 200px; /* Limit the maximum width to maintain readability and prevent stretching */
     }
     
-  
   
     #SA:hover {
       background-color: #E49E70;
@@ -109,5 +121,16 @@
         background-color:#D39063 ;
   
       }
-  
+
     }
+
+
+
+
+
+
+  
+    
+
+
+

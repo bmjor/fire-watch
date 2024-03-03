@@ -35,7 +35,7 @@ function getRandomDog() {
 }); */
 
 
-//this is to being user to location based on the zipcode
+//this is to bring user to location based on the zipcode
 /*document.addEventListener("DOMContentLoaded", function() {
     // Get input and button elements
     const zipcodeInput = document.getElementById("zipcode-input");
@@ -60,3 +60,4 @@ function getRandomDog() {
         }
     });
 }); */
+

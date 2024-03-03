@@ -2,6 +2,7 @@
 <html>
  <head>
    <title>QUICKFIRE :)</title>
+   
    <link type='text/css' href='index.css' rel='stylesheet' />
    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,18 +23,22 @@
       <h3> Displays the likelihood of a wildfire due to dry weather </h3>
 
     </div>
+    <div class = "canvas">
+      <canvas id="myCanvas" width="200" height="100"></canvas>
+    </div>
+    
 
 
-    <div>
-      <div class="button-container">
-        <div id="NA" onclick="getRandomDog()">North America</div>
-        <div id="SA">South America</div>
-        <div id="AS">Asia</div>
-        <div id="AF">Africa</div>
-        <div id="EU">Europe</div>
-        <div id="SA">Australia</div>
-      </div>
-  </div>
+   <div>
+        <div class="button-container">
+          <div id="NA" onclick="getRandomDog()">North America</div>
+          <div id="SA">South America</div>
+          <div id="AS">Asia</div>
+          <div id="AF">Africa</div>
+          <div id="EU">Europe</div>
+          <div id="SA">Australia</div>
+        </div>
+    </div>
     
     <!--textbox input for zipcode-->
     <div class = "zipcode-tb">
@@ -43,6 +48,10 @@
         <button id="submit-button">Submit</button>
     </div>
     </div>
+
+    <div class="about-icon">
+      <a href="about-us.html"><img src="question_icon.jpg" alt="Question Icon"></a>
+  </div>
 
   </body>
 </html>
