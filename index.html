@@ -1,82 +1,82 @@
-
 <!DOCTYPE html>
 <html>
 
- <head>
-  <!--website logo-->
-  <link rel="icon" href="./images/favicon.ico" type="image/png">
+<head>
+  <title>
+    Quick Fires
+  </title>
+  <style>
+    body {
+      background-color: #F8F9FA; /* Set the background color to black */
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide-out Buttons</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.css">
+  <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+</head>
 
-   <title>QUICKFIRE :)</title>
-    <link type='text/css' href='index.css' rel='stylesheet' />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+<body>
+  <div>
+    <h1>QUICKFIRES</h1>
+    <p class="blurb">Our mission is to determine the likelihood of a wildifire, by determining the frequency of which wildfires have occured at the user's location.</p>
     
-    <!--leaflet/map visual overlay info-->
-    <!-- Include Papa Parse -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.css">
-    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>  
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-    <script src = "leaflet-heat.js"></script>
-
- </head>
-
- <body>
-    <div class = "tool name">
-      <h1>QUICKFIRES</h1>
-    </div>
-
-    <div class = "blurb">
-      <h2> Our Mission </h2>
-      <h3> Determines the frequency at which wildfires have occurred at the user’s location </h3>
-      <h3> Displays the likelihood of a wildfire due to dry weather </h3>
-
-    </div>
-    <div class = "canvas">
-      <canvas id="myCanvas" width="200" height="100"></canvas>
-    </div>
-
-   <div>
-        <div class="button-container">
-          <div id="NA" onclick="switchMap(1)">North America</div>
-          <div id="SA" onclick="switchMap(2)">South America</div>
-          <div id="AS" onclick="switchMap(3)">Asia</div>
-          <div id="AF" onclick="switchMap(4)">Africa</div>
-          <div id="EU" onclick="switchMap(5)">Europe</div>
-          <div id="SA" onclick="switchMap(6)">Australia</div>
-        </div>
-    </div>
     
-    <!--textbox input for zipcode-->
-    <div class = "zipcode-tb">
-      <p>Enter zip code</p>
-      <div class="zipcode-form">
-        <input type="text" id="zipcode-input" placeholder="Enter zip code">
-        <button id="submit-button">Submit</button>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <div class="map-container">
+      <div id="map" style="height: 400px; width: 800px"></div>
+    <input id="fileParser" type="file" accept=".csv" />
     </div>
+    <div class="menu-toggle" id="menuToggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
- 
-    <div class="about-icon">
-      <a href="about-us.html" target="_blank" rel="noopener noreferrer">
-          <img src="./images/qt_icon.png" alt="Question Icon">
-      </a>
+    <div class="button-container" id="buttonContainer">
+      <button id="NA">North America</button>
+      <button id="SA">South America</button>
+      <button id="AF">Africa</button>
+      <button id="EU">Europe</button>
+      <button id="AS">Asia</button>
+      <button id="AUS">Australia</button>
+    </div>
+    <script src="script.js"></script>
+
   </div>
-    
-  <!--map component file-->
-      <!-- Input element for selecting a file -->
-      <input id="fileParser" type="file" accept=".csv" />
-      <div id="map" style="height: 400px;"></div>  
-  </body>
-</html>
+  
 
+  <div class="about-icon">
+    <a href="about-us.html" target="_blank" rel="noopener noreferrer">
+        <img src="question.png" alt="Question Icon">
+    </a>
+  </div>
+  <div class="form-container">
+    <label for="zip-input" style="color: #64696C; font-family: 'Poppins', sans-serif;">Please input Zip Code:</label>
+    <input type="text" id="zip-input" class="zip-input" placeholder="Enter Zip Code">
+    <button type="submit" class="submit-btn">Submit</button>
+  </div>
+
+
+</body>
+
+</html>
 
 <script src="index.js"></script>

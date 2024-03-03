@@ -1,24 +1,20 @@
-//import Papa from 'papaparse';
+document.getElementById('menuToggle').addEventListener('click', function() {
+    document.body.classList.toggle('menu-open');
+    var buttonContainer = document.getElementById('buttonContainer');
+    if (document.body.classList.contains('menu-open')) {
+      buttonContainer.style.left = 'calc(1.25% + 20px)'; // Adjust the left position to 20% of the screen width plus 20px
+    } else {
+      buttonContainer.style.left = '-180px'; // Slide the buttons back to the initial position
+    }
+  });
+  
+
+  //import Papa from 'papaparse';
 
 const map = L.map('map').setView([38, -101.2996], 4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
-function switchMap(continent){
-  if(continent == 1 ){
-        L.setView([38, -101.2996], 4);
-  }
-  else if (continent == 2){
-      L.setView([25, -534.342], 7)
-  }
-  else{
-    L.setView([175, 755.2345], 12)
-  }
-}
-
-
-
 
 function handleCSVData(results) {
     // Log the parsed data to the console
@@ -94,4 +90,3 @@ document.getElementById('fileParser').addEventListener('change', handleFileInput
 function getuserLocation() {
     
 }
-

@@ -1,133 +1,245 @@
 .rubik-glitch pop-regular {
-    font-family: "Rubik Glitch Pop", system-ui;
-    font-weight: 400;
-    font-style: bold;
-  }
-  .poppins-semibold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
+  font-family: "Rubik Glitch Pop", system-ui;
+  font-weight: 400;
+  font-style: bold;
+}
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 
-  
-  h1 {
-    color: #E99D6B;
-    font-family: "Rubik Glitch Pop", sans-serif;
-    font-size: 5em;
-    background: #F5EBDC;
-    padding: 10px 20px; /* Add padding to give space around the text */
-    border-radius: 15px; /* Set border radius for rounded corners */
-    margin: 0 auto; /* Center the heading horizontally */
-    text-align: center; /* Align the text to the center */
-    /*width: 33%; /* Set the width to one-third of the screen */
-    max-width: 600px; /* Limit the maximum width */
-  }
-  
-  h1:hover{
-    animation-name: color-change;
-    animation-duration: 4.5s;
-    animation-iteration-count: infinite;
-    cursor: pointer;
-  
-  
-  }
-  
-  .about-icon {
-    position: fixed;
-    top: 27.5px;
-    right: 35px;
+
+h1 {
+  color: #E99D6B;
+  font-family: "Rubik Glitch Pop", sans-serif;
+  font-size: 5em;
+  background: #F5EBDC;
+  padding: 10px 20px; /* Add padding to give space around the text */
+  border-radius: 15px; /* Set border radius for rounded corners */
+  margin: 20px auto 0; /* Center the heading horizontally and add margin-top for pushing it down */
+  text-align: center; /* Align the text to the center */
+  max-width: 600px; /* Limit the maximum width */
+}
+
+
+
+h1:hover{
+  animation-name: color-change;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+
+
+}
+
+.about-icon {
+  position: fixed;
+  top: 27.5px;
+  right: 35px;
 }
 
 .about-icon img {
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+.blurb {
+  color: #64696C; /* Set the text color */
+  font-family: "Poppins", sans-serif; /* Use Poppins font */
+  font-size: 1em; /* Set a suitable font size */
+  text-align: center; /* Center-align the text */
+  margin: 20px auto; /* Add some top margin for spacing and center it horizontally */
+  max-width: 80%; /* Limit the maximum width to ensure proper readability */
 }
 
-  
-    #fun-facts {
-      color: lightblue;
-    }
-    
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    
-    #SA, #NA, #AF, #EU, #AS, #AUS {
-      color: #3C4043;
-      font-family: "Poppins", sans-serif;
-      font-size: 1.5em;
-      background-color: #ECAF87;
-      padding: 10px;
-      margin: 5px 0; /* Add margin to create space between buttons */
-      border-radius: 10px;
-      width: calc(100% - 20px); /* Set the width of each button to be 100% of the container width minus the padding */
-      max-width: 200px; /* Limit the maximum width to maintain readability and prevent stretching */
-    }
-    
-  
-    #SA:hover {
-      background-color: #E49E70;
-      cursor: pointer;
-    }
-  
-    #NA:hover{
-      cursor: pointer;
-      background-color: #E49E70;
-    }
-  
-    #AF:hover {
-      background-color: #E49E70;
-      cursor: pointer;
-    }
-  
-    #AUS:hover {
-      background-color: #E49E70;
-      cursor: pointer;
-    }
-  
-    #EU:hover {
-      background-color: #E49E70;
-      cursor: pointer;
-    }
-    #AS:hover {
-      background-color: #E49E70;
-      cursor: pointer;
-    }
-  
-  /*for the QUICKFIRE logo*/
-    @keyframes color-change{
-      0%{
-        background-color: #D39063;
-      }
-      25%{
-        background-color: #C2855B;
-  
-      }
-      50%{
-        background-color: #B1764E;
-  
-      }
-      75%{
-        background-color: #F3A26C;
-  
-      }
-      100%{
-        background-color:#D39063 ;
-  
-      }
 
-    }
+.menu-toggle {
+  position: fixed;
+  top: 40px;
+  left: 50px;
+  width: 50px; /* Increase the width */
+  height: 40px; /* Increase the height */
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #64696C;
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.button-container {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -180px;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+}
+
+#SA, #NA, #AF, #EU, #AS, #AUS {
+  color: #64696C;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+  background-color: #F8F9FA;
+  padding: 10px;
+  margin: 20px 0 10px; /* Increase the top margin to move the buttons down */
+  border: 1.5px solid #64696C;
+  border-radius: 10px;
+  width: calc(100% - 20px);
+  max-width: 200px;
+  height: 100%; /* Set the height of the buttons to fill the available vertical space */
+}
 
 
 
 
-
+.menu-open #buttonContainer {
+  left: 0;
+}
   
-    
+.form-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container label {
+  color: #64696C;
+  font-family: "Poppins", sans-serif;
+  margin-right: 10px; /* Add margin to the right of the label */
+}
 
 
 
+.zip-input {
+  font-family: "Poppins", sans-serif;
+  color: #64696C;
+  padding: 8px;
+  border: 2px solid #64696C;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 450px;
+}
+
+.submit-btn {
+  font-family: "Poppins", sans-serif;
+  color: #64696C;
+  background-color: #F8F9FA;
+  padding: 8px 20px;
+  border: 2px solid #64696C;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  transition: 0.3s;
+  color: #F5EBDC;
+  background-color: #64696C;
+  cursor: pointer;
+  border: none;
+
+}
+
+  #SA:hover {
+    transition: 0.3s;
+    color: #F5EBDC;
+    background-color: #ECAF87;
+    cursor: pointer;
+    border: none;
+  }
+
+  #NA:hover{
+    transition: 0.3s;
+    color: #F5EBDC;
+    cursor: pointer;
+    background-color: #ECAF87;
+    border: none;
+  }
+
+  #AF:hover {
+    transition: 0.3s;
+    color: #F5EBDC;
+    background-color: #ECAF87;
+    cursor: pointer;
+    border: none;
+  }
+
+  #AUS:hover {
+    transition: 0.3s;
+    color: #F5EBDC;
+    background-color: #ECAF87;
+    cursor: pointer;
+    border: none;
+  }
+
+  #EU:hover {
+    transition: 0.3s;
+    color: #F5EBDC;
+    background-color: #ECAF87;
+    cursor: pointer;
+    border: none;
+  }
+  #AS:hover {
+    transition: 0.3s;
+    color: #F5EBDC;
+    background-color: #ECAF87;
+    cursor: pointer;
+    border: none;
+  }
+
+
+
+
+  @keyframes color-change{
+    0%{
+      background-color: #D39063;
+    }
+    25%{
+      background-color: #C2855B;
+
+    }
+    50%{
+      background-color: #B1764E;
+
+    }
+    75%{
+      background-color: #F3A26C;
+
+    }
+    100%{
+      background-color:#D39063 ;
+
+    }
+
+  }
