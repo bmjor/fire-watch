@@ -1,0 +1,113 @@
+.rubik-glitch pop-regular {
+  font-family: "Rubik Glitch Pop", system-ui;
+  font-weight: 400;
+  font-style: bold;
+}
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+h1 {
+  color: #E99D6B;
+  font-family: "Rubik Glitch Pop", sans-serif;
+  font-size: 5em;
+  background: #F5EBDC;
+  padding: 10px 20px; /* Add padding to give space around the text */
+  border-radius: 15px; /* Set border radius for rounded corners */
+  margin: 0 auto; /* Center the heading horizontally */
+  text-align: center; /* Align the text to the center */
+  width: 33%; /* Set the width to one-third of the screen */
+  max-width: 600px; /* Limit the maximum width */
+}
+
+h1:hover{
+  animation-name: color-change;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+
+
+}
+
+
+  #fun-facts {
+    color: lightblue;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #SA, #NA, #AF, #EU, #AS, #AUS {
+    color: #3C4043;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5em;
+    background-color: #ECAF87;
+    padding: 10px;
+    margin: 5px 0; /* Add margin to create space between buttons */
+    border-radius: 10px;
+    width: calc(100% - 20px); /* Set the width of each button to be 100% of the container width minus the padding */
+    max-width: 200px; /* Limit the maximum width to maintain readability and prevent stretching */
+  }
+  
+
+
+  #SA:hover {
+    background-color: #E49E70;
+    cursor: pointer;
+  }
+
+  #NA:hover{
+    cursor: pointer;
+    background-color: #E49E70;
+  }
+
+  #AF:hover {
+    background-color: #E49E70;
+    cursor: pointer;
+  }
+
+  #AUS:hover {
+    background-color: #E49E70;
+    cursor: pointer;
+  }
+
+  #EU:hover {
+    background-color: #E49E70;
+    cursor: pointer;
+  }
+  #AS:hover {
+    background-color: #E49E70;
+    cursor: pointer;
+  }
+
+
+
+
+  @keyframes color-change{
+    0%{
+      background-color: #D39063;
+    }
+    25%{
+      background-color: #C2855B;
+
+    }
+    50%{
+      background-color: #B1764E;
+
+    }
+    75%{
+      background-color: #F3A26C;
+
+    }
+    100%{
+      background-color:#D39063 ;
+
+    }
+
+  }
