@@ -33,9 +33,9 @@ function handleCSVData(results) {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
-            radius: (parseInt((index["Discovery Acres"])+1)/150)
+            radius: (parseInt((index["Discovery Acres"])+1)/100)
         }).addTo(map)
-        .bindPopup(index["Fire Discovery Date Time"].concat())
+        .bindPopup(index["Fire Discovery Date Time"].concat("\n Acres affected: ", index["Discovery Acres"]))
         .openPopup();
             }
     console.log(numOfHumanRelated)
@@ -43,6 +43,16 @@ function handleCSVData(results) {
 
     // You can perform further processing with the data here
 }
+
+function getCoordinates(address){
+    fetch("https://maps.googleapis.com/maps/api/geocode/json?address="+address+'&key='+API_KEY)
+      .then(response => response.json())
+      .then(data => {
+        const latitude = data.results.geometry.location.lat;
+        const longitude = data.results.geometry.location.lng;
+        console.log({latitude, longitude})
+      })
+  }
 
 async function getCoordinatesFromZipCode(zipCode) {
     try {
