@@ -26,7 +26,7 @@ function handleCSVData(results) {
             numOfHumanRelated++;
         }
         L.circle([index["y"], index["x"]], {
-            color: 'red',
+            color: 'orange',
             fillColor: '#f03',
             fillOpacity: 0.5,
             radius: (parseInt((index["Discovery Acres"])+1)/100)
